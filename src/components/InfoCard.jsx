@@ -1,13 +1,9 @@
 import React from "react";
-import {Image} from "./Image";
-import {ButtonPanel} from "./ButtonPanel";
-
-export default class Card extends React.Component{
-  constructor(props) {
-    super(props);
-  }
+import {store} from "../index";
+export default class InfoCard extends React.Component{
   render() {
-    return <div className="Card"><Image/><ButtonPanel dark={this.props.dark}/>
+    let dark = store.getState().theme.dark? "DarkInfo" : ""
+    return <div className={`InfoCard ${dark}`}>ABCD
     </div>
   }
 }

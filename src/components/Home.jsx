@@ -1,26 +1,22 @@
 import React from "react";
-import logo from "../logo.svg";
 import "../sass/App.css";
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import InfoCard from "./InfoCard";
+import {store} from "../index";
+import {ContentBlock} from "./ContentBlock";
+import {CardHolder} from "./CardHolder";
 
+export default class Home extends React.Component {
   render() {
-    return <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    let dark = store.getState().theme.dark;
+    return <div className={dark ? "Home Dark" : "Home"}>
+      <header>
+        <CardHolder/>
+        <ContentBlock/>
+        <ContentBlock/><InfoCard/>
+        <ContentBlock/><InfoCard/>
+        <ContentBlock/><InfoCard/>
+        <ContentBlock/><InfoCard/>
+        <ContentBlock/><InfoCard/>
       </header>
     </div>
   }

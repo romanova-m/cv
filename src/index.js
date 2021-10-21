@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from "./components/Home";
+import {storeFactory} from "./reducers";
+import { Provider } from 'react-redux';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const initialState= {
+  theme: {dark:true}
+}
+export const store = storeFactory(initialState)
 
+const render = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"/>
+      <link rel="stylesheet" href="../public/stylesheets/App.css"/>
+      <Home/>
+    </Provider>,
+    document.getElementById('root')
+  )
+};
+store.subscribe(render);
+render();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

@@ -7,11 +7,10 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-logo-animated {
+  animation: App-logo-spin infinite 20s linear;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,6 +33,168 @@
   to {
     transform: rotate(360deg);
   }
+}
+.Dark {
+  background-color: #282c34;
+  color: whitesmoke;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardHolder {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: stretch;
+}
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.InfoCard {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 100vh;
+  justify-content: center;
+  background-color: #ffafd6;
+}
+
+.DarkInfo {
+  background-color: deeppink;
+}
+
+.Image {
+  width: 100%;
+  height: 500px;
+  align-self: center;
+  background-color: #ccc;
+}
+
+.ContentBlock {
+  height: 100vh;
+}
+
+.ButtonPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.BtnImg {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+}
+
+.Inverted {
+  filter: invert(1);
+}
+
+.Btn {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+}
+.Btn:hover {
+  background-color: rgba(142, 142, 142, 0.45);
+  transition-duration: 200ms;
+}
+
+@media (min-width: 600px) {
+  .Home {
+    display: flex;
+  }
+
+  .CardHolder {
+    flex-direction: row;
+  }
+
+  .Card {
+    flex-direction: column;
+    width: 30%;
+    padding: 5%;
+    flex-grow: 0;
+  }
+
+  .InfoCard {
+    flex-grow: 5;
+    padding: 5%;
+  }
+
+  .ButtonPanel {
+    flex-direction: row-reverse;
+  }
+}
+/* toggle */
+/* The switch - the box around the slider */
+.switch {
+  align-self: center;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=App.css.map */
