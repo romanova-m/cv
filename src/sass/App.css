@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,8 +44,8 @@
   }
 }
 .Dark {
-  background-color: #282c34;
-  color: whitesmoke;
+  background-color: #3a3c40;
+  color: white;
 }
 
 .Home {
@@ -59,22 +68,37 @@
 
 .InfoCard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-grow: 1;
   height: 100vh;
   justify-content: center;
-  background-color: #ffafd6;
+  background-color: rgba(255, 128, 142, 0.18);
+}
+.InfoCardText {
+  margin: 5%;
+  padding: 5%;
+  flex-direction: column;
+}
+
+.LightText {
+  font-family: "Roboto Light", sans-serif;
+}
+
+.Font--large {
+  font-size: x-large;
+}
+.RegularText {
+  font-family: "Roboto", sans-serif;
 }
 
 .DarkInfo {
-  background-color: deeppink;
 }
 
 .Image {
   width: 100%;
-  height: 500px;
   align-self: center;
-  background-color: #ccc;
+  background-color: white;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 .ContentBlock {
@@ -124,77 +148,51 @@
   }
 
   .InfoCard {
-    flex-grow: 5;
-    padding: 5%;
+    flex-direction: column;
   }
 
   .ButtonPanel {
     flex-direction: row-reverse;
   }
 }
-/* toggle */
-/* The switch - the box around the slider */
-.switch {
-  align-self: center;
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
-
-.slider:before {
-  position: absolute;
+input[type=checkbox]:focus {
+  outline: 0;
+}
+.toggle {
+  height: 32px;
+  width: 52px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 2px solid #474755;
+  background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
+  transition: all 0.2s ease;
+}
+.toggle:after {
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
 }
-
+.toggle:checked {
+  border-color: #654FEC;
+}
+.toggle:checked:after {
+  transform: translatex(20px);
+}
 /*# sourceMappingURL=App.css.map */
