@@ -18,7 +18,7 @@ const saver = store => next => action => {
 }
 
 const initStorage = (initialState = {}) => {
-  return JSON.parse(localStorage['romanova-cv']? localStorage['romanova-cv'] : initialState);
+  return localStorage['romanova-cv']? JSON.parse(localStorage['romanova-cv']) : initialState;
 }
 
 export const storeFactory = (initialState={}) => {

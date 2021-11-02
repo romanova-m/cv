@@ -6,8 +6,11 @@ import Home from "./components/Home";
 import {storeFactory} from "./reducers";
 import { Provider } from 'react-redux';
 
-const initialState= {
-  theme: {dark:true}
+const initialState = {
+  theme: {
+    dark: true,
+    lang: "ru"
+  }
 }
 export const store = storeFactory(initialState)
 

@@ -3,7 +3,7 @@ import photo from "./123.jpg"
 
 export class Image extends React.Component {
   render() {
-    return <><img alt="123" src={photo} className="Image"/>
-    </>
+    return <div className=""><img alt="avatar" src={photo} className="Image"/>
+    </div>
   }
 }

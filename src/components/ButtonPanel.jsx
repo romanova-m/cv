@@ -3,11 +3,7 @@ import logo from "../icons/github.svg";
 import work from "../icons/briefcase.svg"
 import mail from "../icons/email.svg"
 import school from "../icons/school.svg"
-import night from "../icons/dark_mode.svg"
-import {changeTheme} from "../actions";
-import {connect} from "react-redux";
 import {store} from "../index";
-import {TextComponent} from "./TextComponent";
 
 class Button extends React.Component {
   render() {
@@ -15,19 +11,9 @@ class Button extends React.Component {
   }
 }
 
-class ButtonPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state= {...this.props};
-  }
-  click = (dark) => {
-    this.props.changeComponentTheme(!dark)
-  };
+export default class ButtonPanel extends React.Component {
   render() {
-    let dark = store.getState().theme.dark;
     return <div className="ButtonPanel">
-      <input type="checkbox" className={"toggle"} onClick={() => this.click(dark)} value={dark} defaultChecked={store.getState().theme.dark}/>
-      <label><TextComponent text={"nightMode"}/></label>
       <Button logo={logo}/>
       <Button logo={work}/>
       <Button logo={mail}/>
@@ -35,14 +21,3 @@ class ButtonPanel extends React.Component {
     </div>;
   }
 }
-
-export default connect(
-  state => ({
-    dark: state.dark
-  }),
-  dispatch => ({
-    changeComponentTheme(val) {
-      dispatch(changeTheme(val))
-    }
-  })
-)(ButtonPanel)

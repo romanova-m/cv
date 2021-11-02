@@ -4,8 +4,9 @@ import InfoCard from "./InfoCard";
 import {store} from "../index";
 import {ContentBlock} from "./ContentBlock";
 import {CardHolder} from "./CardHolder";
+import { withTranslation } from 'react-i18next';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
     let dark = store.getState().theme.dark;
     return <div className={dark ? "Home Dark" : "Home"}>
@@ -21,3 +22,5 @@ export default class Home extends React.Component {
     </div>
   }
 }
+
+export default withTranslation()(Home)

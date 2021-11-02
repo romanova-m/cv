@@ -44,13 +44,18 @@
   }
 }
 .Dark {
-  background-color: #3a3c40;
+  background-color: rgb(58, 60, 64);
   color: white;
 }
 
 .Home {
   display: flex;
   flex-direction: column;
+}
+
+.HeaderFixed {
+  display: flex;
+  align-self: end;
 }
 
 .CardHolder {
@@ -70,10 +75,17 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 100vh;
-  justify-content: center;
-  background-color: rgba(255, 128, 142, 0.18);
+  background-color: rgba(255, 128, 142, 0.07);
 }
+
+.InfoCardContent {
+  display: none;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  flex-flow: column;
+}
+
 .InfoCardText {
   margin: 5%;
   padding: 5%;
@@ -97,8 +109,8 @@
 .Image {
   width: 100%;
   align-self: center;
-  background-color: white;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  flex-grow: 10;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .ContentBlock {
@@ -108,12 +120,12 @@
 .ButtonPanel {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 0;
 }
 
 .BtnImg {
-  height: 2rem;
-  width: 2rem;
-  padding: 0.5rem;
+  width: 100%;
 }
 
 .Inverted {
@@ -142,17 +154,17 @@
 
   .Card {
     flex-direction: column;
-    width: 30%;
     padding: 5%;
-    flex-grow: 0;
+    width: 20%;
   }
 
-  .InfoCard {
-    flex-direction: column;
+  .InfoCardContent {
+    display: flex;
   }
 
   .ButtonPanel {
     flex-direction: row-reverse;
+    justify-content: end;
   }
 }
 
