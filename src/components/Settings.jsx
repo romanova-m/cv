@@ -4,6 +4,8 @@ import i18n from "../locales/i18n";
 import {TextComponent} from "./TextComponent";
 import {connect} from "react-redux";
 import {changeLang, changeTheme} from "../actions";
+import * as PropTypes from "prop-types";
+import {useTranslation} from "react-i18next";
 
 class Settings extends React.Component{
   changeMode = (dark) => {
@@ -18,7 +20,8 @@ class Settings extends React.Component{
     let dark = this.props.dark;
     let lang = (this.props.lang === "en");
     return <>
-        <input type="checkbox" className={"toggle"} onClick={() => this.changeMode(dark)} value={dark} defaultChecked={dark}/>
+      <Toggle defaultChecked={dark}/>
+        <input type="checkbox" className={"toggle"} onClick={() => this.changeMode(dark)} defaultChecked={dark}/>
         <label><TextComponent text={"nightMode"}/></label>
         <input type="checkbox" className={"toggle"} onClick={() => this.changeLang(lang)} value={lang} defaultChecked={lang}/>
         <label><TextComponent text={"RU/EN"}/></label>
@@ -40,3 +43,12 @@ export default connect(
     }
   })
 )(Settings)
+
+export const Toggle = (props) => {
+  return (<>
+    <div className="ToggleBtn">
+    <input type="checkbox" defaultChecked={props.defaultChecked}/>
+    <label>123</label>
+    </div>
+  </>);
+};
